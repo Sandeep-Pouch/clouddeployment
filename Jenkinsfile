@@ -23,7 +23,7 @@ pipeline {
            steps {
                script {         
                  def customImage = docker.build('Sandeep-Pouch/clouddeployment', "./docker")
-                 docker.withRegistry('https://registry.hub.docker.com', 'sandeeppochu') {
+                 docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
                  customImage.push("${env.BUILD_NUMBER}")
                  }                     
            }
